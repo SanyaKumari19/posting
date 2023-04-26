@@ -1,0 +1,574 @@
+
+body {
+    overflow: hidden;
+    background-color: var(--bg1) !important;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus,
+a:focus {
+    outline: none !important;
+}
+
+:root {
+    --bg1: #15202b;
+    --bg2: #192734;
+    --bg3: #253341;
+    --color: #fff;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 40vw 20vw;
+    grid-gap: 10vw;
+    align-items: flex-start;
+    margin: auto;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+#timeline {
+    background: var(--bg3);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#timeline footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 0;
+    border-top: 1px solid var(--bg2);
+}
+
+#timeline footer i {
+    margin-bottom: 10px;
+    color: var(--color);
+}
+
+#timeline footer button {
+    background: transparent;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 5px;
+    color: var(--color);
+}
+
+#timeline footer button:hover {
+    background: var(--bg2);
+}
+
+.new-tweet textarea {
+    border: none;
+    width: 100%;
+    resize: none;
+    padding: 15px;
+    height: auto;
+    box-sizing: border-box;
+    height: 51px;
+    cursor: pointer;
+    color: var(--color) !important;
+    background: var(--bg3);
+}
+
+.new-tweet img {
+    width: 70%;
+    height: auto;
+    margin: 10px auto;
+}
+
+.new-tweet {
+    margin-bottom: 10px;
+}
+
+
+/* .new-tweet textarea:not(:-moz-placeholder-shown) {
+    height: 100px;
+    cursor: text;
+}
+
+.new-tweet textarea:not(:-ms-input-placeholder) {
+    height: 100px;
+    cursor: text;
+}
+
+.new-tweet textarea:focus,
+.new-tweet textarea:not(:placeholder-shown) {
+    height: 100px;
+    cursor: text;
+}
+
+.new-tweet textarea:not(:-moz-placeholder-shown)~.btns {
+    height: 100%;
+    padding: 0 15px 15px;
+}
+
+.new-tweet textarea:not(:-ms-input-placeholder)~.btns {
+    height: 100%;
+    padding: 0 15px 15px;
+}
+
+.new-tweet textarea:focus~.btns,
+.new-tweet textarea:not(:placeholder-shown)~.btns {
+    height: 100%;
+    padding: 0 15px 15px;
+} */
+
+.new-tweet .btns {
+    padding: 0 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.new-tweet .btns .btn {
+    margin-right: 15px;
+}
+
+.new-tweet .btns .btn button {
+    padding: 0;
+    padding: 0;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    color: var(--color);
+}
+
+.new-tweet .btns .btn button:hover {
+    background: var(--bg2);
+}
+
+.new-tweet .btns .btn:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 0;
+}
+
+.new-tweet .btns .btn:last-child button {
+    width: auto;
+    border-radius: 3px;
+    padding: 0 10px;
+    background: #03A9F4;
+    color: #fff;
+}
+
+.new-tweet .btns .btn:last-child button:hover {
+    background: #039fe5;
+}
+
+.new-tweet .btns .btn:last-child button i {
+    margin-right: 10px;
+}
+
+.tweet {
+    border-top: 1px solid var(--bg2);
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.tweet .left {
+    margin-right: 15px;
+}
+
+.tweet .left img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tweet .right {
+    width: 100%;
+}
+
+.tweet .right .info {
+    display: flex;
+    align-items: center;
+    color: var(--color);
+    margin-bottom: 5px;
+}
+
+.tweet .right .info p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.tweet .right .info p span {
+    margin: 0 10px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.tweet .right .info time {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.tweet .right .info time:before {
+    content: "";
+    height: 2px;
+    width: 2px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: var(--color);
+}
+
+
+.tweet .right .message p {
+    margin: 0;
+    color: var(--color);
+    line-height: 20px;
+}
+
+.tweet .right .message img {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.tweet .right .btns {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.tweet .right .btns button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    color: var(--color);
+    font-size: 12px;
+}
+
+.tweet .right .btns button i {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.tweet .right .btns button.blue:hover {
+    color: #03A9F4;
+}
+
+.tweet .right .btns button.blue:hover i {
+    background: rgba(3, 169, 244, 0.1);
+}
+
+.tweet .right .btns button.green:hover {
+    color: #4CAF50;
+}
+
+.tweet .right .btns button.green:hover i {
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.tweet .right .btns button.red:hover {
+    color: #ff2f20;
+}
+
+.tweet .right .btns button.red:hover i {
+    background: rgba(255, 47, 32, 0.1);
+}
+
+.tweet:hover {
+    background: var(--bg2);
+}
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+    border-radius: 5px;
+    display: block;
+    margin-top: 10px;
+}
+
+.iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container .search-input {
+    width: 100%;
+    position: relative;
+}
+
+.search-container .search-input input {
+    background: var(--bg3);
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    color: var(--color);
+    padding: 15px 15px 15px 55px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.search-container .search-input input:not(:-moz-placeholder-shown)~i {
+    opacity: 1;
+}
+
+.search-container .search-input input:not(:-ms-input-placeholder)~i {
+    opacity: 1;
+}
+
+.search-container .search-input input:not(:placeholder-shown)~i {
+    opacity: 1;
+}
+
+.search-container .search-input i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.4;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: var(--color);
+}
+
+.search-container .search-results {
+    border-top: 1px solid var(--bg2);
+    background: var(--bg3);
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    display: none;
+}
+
+.search-container .search-results .result {
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    color: var(--color);
+}
+
+.search-container .search-results .result p {
+    margin: 0;
+}
+
+.search-container .search-results .result img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    margin-right: 15px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.search-container .search-results .result span {
+    display: block;
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+.search-container .search-results .result:hover {
+    background: var(--bg2);
+    cursor: pointer;
+}
+
+.search-container .search-results .result:last-child p {
+    font-size: 12px;
+}
+
+.search-container .search-results hr {
+    border: none;
+    height: 1px;
+    background: var(--bg2);
+    margin: 0;
+}
+
+#right section {
+    padding: 15px;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--bg2);
+    background: var(--bg3);
+    overflow: hidden;
+}
+
+#right section header {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+#right section header h3 {
+    flex: 1;
+    font-weight: 400;
+    margin: 0;
+    color: var(--color);
+}
+
+#right section header button {
+    padding: 0;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    color: var(--color);
+}
+
+
+#right section header button:hover {
+    background: var(--bg2);
+}
+
+#right section header a {
+    text-decoration: none;
+    font-size: 12px;
+    color: #03A9F4;
+}
+
+#right section:first-of-type {
+    border-radius: 3px 3px;
+}
+
+#right section:last-of-type {
+    border-bottom: none;
+    border-radius: 0 0 3px 3px;
+}
+
+#right main a {
+    text-decoration: none;
+    color: var(--color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+#right main a:not(.trend) {
+    display: flex;
+    align-items: center;
+}
+
+#right main a img {
+    width: 42px;
+    height: 42px;
+    display: block;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+#right main a .trend-num {
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+#right main a .trend p {
+    margin: 2px 0;
+}
+
+#right main a .trend span {
+    display: block;
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+#right main a .trend .quote {
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--bg2);
+    margin-top: 5px;
+}
+
+#right main a .trend .quote .info {
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    border-right: 1px solid var(--bg2);
+}
+
+#right main a .trend .quote img {
+    border-radius: 0;
+    width: 61px;
+    height: 61px;
+}
+
+#right main a .trend .quote:hover {
+    background: var(--bg2);
+}
+
+#right main a .trend .quote:hover .info>p {
+    color: #03A9F4;
+}
+
+#right main a .user {
+    margin-left: 15px;
+}
+
+#right main a .user p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#right main a .user p small {
+    margin-left: 5px;
+}
+
+#right main a .user span {
+    font-size: 12px;
+    opacity: 0.5;
+    display: block;
+}
+
+#right main a:hover>.user p,
+#right main a:hover>.trend>p {
+    color: #03A9F4;
+}
+
+#right main a:last-child {
+    margin-bottom: 0;
+}

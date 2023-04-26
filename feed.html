@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed</title>
+    <link rel="stylesheet" href="feed.css">
+    <link rel="stylesheet" href="feed-sidebar.css">
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div class="wrapper d-flex h-100">
+        <aside class="sidebar h-100">
+            <div class="sidebar-section sidebar-header">
+                <div class="sidebar-logo text-center">
+                    <a href="#" class="text-light">What's up Mody University !</a>
+                </div>
+            </div>
+            <div class="sidebar-section sidebar-profile pt-4 pb-4">
+                <div class="profile-picture">
+                    <div class="picture-wrapper rounded-circle ml-auto mr-auto">
+                        <img src="" class="img-fluid profile-pic" alt="">
+                    </div>
+                    <span class="profile-alert"></span>
+                    <div class="profile-details text-center mt-2">
+                        <div class="name" id="name"></div>
+                        <small class="role" id="username"></small>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section sidebar-menu p-0">
+                <ul class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link rounded-0 active" id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="menu" aria-selected="true">
+                            <i class="fas fa-bars"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link rounded-0" id="settings-tab" data-toggle="tab" href="#settings" role="tab" aria-controls="settings" aria-selected="false">
+                            <i class="fas fa-cogs"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    
+                    <div class="tab-pane fade show active pt-3 pb-2" id="menu" role="tabpanel" aria-labelledby="menu-tab">
+                                            <div class="tab-header text-uppercase p-2">
+                                                Menu
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <a href="/profile" class="d-flex align-items-center">
+                                                        <i class="fas fa-user"></i>
+                                                        <span class="menu-text flex-fill">Profile</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/menu" class="d-flex align-items-center">
+                                                        <i class="fa fa-shopping-cart"></i>
+                                                        <span class="menu-text flex-fill">Mess menu</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/complaints" class="d-flex align-items-center">
+                                                        <i class="fa fa-frown-open"></i>
+                                                        <span class="menu-text flex-fill">Complaints</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/people" class="d-flex align-items-center">
+                                                        <i class="fa fa-users"></i>
+                                                        <span class="menu-text flex-fill">People</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="/about" class="d-flex align-items-center">
+                                                        <i class="fa fa-info"></i>
+                                                        <span class="menu-text flex-fill">About</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                    
+                                        <div class="tab-pane fade pt-3 pb-2" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                                            <div class="tab-header text-uppercase p-2">
+                                                Settings
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <a href="#" class="d-flex align-items-center" onclick="changeDP()">
+                                                        <i class="fas fa-cog"></i>
+                                                        <span class="flex-fill">Settings</span>
+                                                        <input type="file" id="pic-input" hidden/>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="d-flex align-items-center">
+                                                        <i class="fas fa-power-off"></i>
+                                                        <span class="flex-fill">Logout</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside>
+                            <div id="container" class="wrapper nav-closed">
+                                <div id="timeline">
+                                    <div class="new-tweet">
+                                        <textarea placeholder="What's happening?" id="newPostMsg"></textarea>
+                                        <img src="" class="new-post-img">
+                                        <div class="btns">
+                                            <div class="btn">
+                                                <button onclick="document.getElementById('files-input').click();"><i class="fas fa-image"></i></button>
+                                                <input type="file" id="files-input" hidden/>
+                                            </div>
+                                            <div class="btn">
+                                                <button><i class="fas fa-film"></i></button>
+                                            </div>
+                                            <div class="btn">
+                                                <button><i class="fas fa-chart-bar"></i></button>
+                                            </div>
+                    
+                    
+                    <div class="btn">
+                                                <button class="blue" onclick="createPost()"><i class="fas fa-comment"></i>Post</button>
+                                            </div class="green">
+                                        </div>
+                                    </div>
+                                    <div class="posts">
+                    
+                                    </div>
+                                    <!-- <div class="tweet">
+                                        <div class="left">
+                                            <img src="https://yt3.ggpht.com/-uJh4oSQAwak/AAAAAAAAAAI/AAAAAAAAAAA/AMGKfKvDP3w/s900-c-k-no-mo-rj-c0xffffff/photo.jpg">
+                                        </div>
+                                        <div class="right">
+                                            <div class="info">
+                                                <p>Bob Ross<span>@BobRoss</span></p>
+                                                <time>11m</time>
+                                            </div>
+                                            <div class="message">
+                                                <p>Just posting some of my work.</p>
+                                                <img src="https://images.fineartamerica.com/images-medium-large-5/autumns-glow-c-steele.jpg">
+                                            </div>
+                                            <div class="btns">
+                                                <button class="blue"><i class="far fa-comment"></i>24</button>
+                                                <button class="green"><i class="fas fa-retweet"></i>12.3K</button>
+                                                <button class="red"><i class="far fa-heart"></i>37.9K</button>
+                                                <button class="blue"><i class="fas fa-ellipsis-h"></i></button>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                    
+                                    <template data-template="tweet-template">
+                                        <div class="tweet">
+                                            <div class="left">
+                                                <img src="" class="profile-dp">
+                                            </div>
+                                            <div class="right">
+                                                <div class="info">
+                                                    <p class="profile-name"><span class="profile-id"></span></p>
+                                                    <time class="tweet-time"></time>
+                                                </div>
+                                                <div class="message tweet-text">
+                                                    <img class="post-img">
+                                                    
+                                                </div>
+                                                <div class="btns">
+                                                    <button class="blue"><i class="far fa-comment"></i>12</button>
+                                                    <button class="green"><i class="fas fa-retweet"></i>45</button>
+                                                    <button class="red like-button"><i class="far fa-heart"></i><span class="like-count"></span></button>
+                                                    <button class="blue"><i class="fas fa-ellipsis-h"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                    
+                                </div>
+                                <div id="right">
+                                    <div class="search-container">
+                                        <div class="search-input">
+                                            <input id="search" type="text" placeholder="Search Posts" autocomplete="off">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                    
+                    
+                    </div>
+                                    <section>
+                                        <header>
+                                            <h3>Mody University trends</h3>
+                                            <button><i class="fas fa-cog"></i></button>
+                                        </header>
+                                        <main>
+                                            <a href="#" class="trend">
+                                                <div class="trend-num"><span>1 - Trending</span></div>
+                                                <div class="trend">
+                                                    <p>#Utkarshita</p>
+                                                    <span>4,144 Tweets</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="trend">
+                                                <div class="trend-num"><span>2 - Trending</span></div>
+                                                <div class="trend">
+                                                    <p>Mody University</p>
+                                                    <span>89.5K Tweets</span>
+                                                    <div class="quote">
+                                                        <div class="info">
+                                                            <p>Celebrating</p>
+                                                            <span>Yashika Goyal performs at Utkarshita 2k22</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="trend">
+                                                <div class="trend-num"><span>3 - Trending</span></div>
+                                                <div class="trend">
+                                                    <p>#RatanTata</p>
+                                                    <span>1,845 Tweets</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="trend">
+                                                <div class="trend-num"><span>4 - Trending</span></div>
+                                                <div class="trend">
+                                                    <p>#RoboWars</p>
+                                                    <span>2,521 Tweets</span>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="trend">
+                                                <div class="trend-num"><span>5 - Trending</span></div>
+                                                <div class="trend">
+                                                    <p>Gajendra Verma</p>
+                                                    <span>13.3K Tweets</span>
+                                                </div>
+                                            </a>
+                                        </main>
+                                    </section>
+                                    <section>
+                                        <header>
+                                            <h3>Who to follow</h3>
+                                            <a href="#">View All</a>
+                                        </header>
+                                        <main>
+                                            <a href="#">
+                                                <!-- <img src=""> -->
+                                                <div class="user">
+                                                    <p>MERAZ 2k22<small>@UtkarshitaMU</small></p>
+                                                    <span>Followed by Vishakha and Mody University</span>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <!-- <img src=""> -->
+                                                <div class="user">
+                                                    <p>Ratan Tata<small>@ratantata</small></p>
+                                                    <span>Followed by Rajiv Prakash and Yash Teck</span>
+                                                </div>
+                                            </a>
+                                            <a href="#">
+                                                <!-- <img src=""> -->
+                                                <div class="user">
+                                                    <p>Mody University<small>@MU</small></p>
+                                                    <span>Followed by Vishakha, Ratan Tata...</span>
+                                                </div>
+                                            </a>
+                                        </main>
+                                    </section>
+                                </div>
+                            </div>
+                            <!-- <script src="../js/suggestion.js"></script> -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuidv4.min.js" integrity="sha512-BCMqEPl2dokU3T/EFba7jrfL4FxgY6ryUh4rRC9feZw4yWUslZ3Uf/lPZ5/5UlEjn4prlQTRfIPYQkDrLCZJXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                    
+                            <script src="../js/feed.js"></script>
+                    </body>
+                    
+                    </html>
